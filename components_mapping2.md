@@ -70,13 +70,60 @@
 | 自定义实现           | [CommandBar](#commandbar)               | 水平排列的命令栏组件             |
 | 自定义实现           | [CommandBarView](#commandbarview)       | 配合 Flyout 使用的命令栏视图组件 |
 
+## 状态信息类型组件
 
+| PySide6 组件名   | PyQt-Fluent-Widgets 组件名 | 简要描述 |
+|---------------| ------------------------- | -------- |
+| 无对应组件         | [InfoBadge](#infobadge)   | 用于显示未读消息或状态更新的小型通知标记 |
+| 无对应组件         | [DotInfoBadge](#dotinfobadge) | 显示为小圆点的通知标记 |
+| 无对应组件         | [IconInfoBadge](#iconinfobadge) | 带有图标的通知标记 |
+| 无对应组件         | [InfoBar](#infobar)             | 显示重要信息的消息条组件，用于提示用户需采取的行动 |
+|`QProgressBar` | [ProgressBar](#progressbar)     | 显示任务进度的组件                 |
+| 无对应组件         | [IndeterminateProgressBar](#indeterminateprogressbar) | 未知进度的任务进度条 |
+| `QProgressBar` | [ProgressRing](#progressring)   | 环形进度条，用于表示处理进度或仪表盘 |
+| 无对应组件         | [IndeterminateProgressRing](#indeterminateprogressring) | 未知进度的环形进度条 |
+| `QToolTip`           | [ToolTip](#tooltipfilter)       | 用来替换 QToolTip 的工具提示 |
+
+## 文本组件
+
+| PySide6 组件名       | PyQt-Fluent-Widgets 组件名       | 简要描述                      |
+|----------------------|---------------------------------|-------------------------------|
+| `QLabel`             | [CaptionLabel](#captionlabel)   | 小型文本标签组件               |
+| `QLabel`             | [BodyLabel](#bodylabel)         | 主体文本标签组件               |
+| `QLabel`             | [StrongBodyLabel](#strongbodylabel) | 强调主体文本标签组件           |
+| `QLabel`             | [SubtitleLabel](#subtitlelabel) | 副标题标签组件                 |
+| `QLabel`             | [TitleLabel](#titlelabel)       | 标题标签组件                   |
+| `QLabel`             | [LargeTitleLabel](#largetitlelabel) | 大标题标签组件               |
+| `QLabel`             | [DisplayLabel](#displaylabel)   | 显示标签组件                   |
+| `QLabel`             | [HyperlinkLabel](#hyperlinklabel) | 超链接标签组件               |
+| `QLabel`             | [ImageLabel](#imagelabel)       | 图片显示组件                   |
+| `QLabel`             | [AvatarWidget](#avatarwidget)   | 头像显示组件                   |
+
+## 输入框组件
+
+| PySide6 组件名        | PyQt-Fluent-Widgets 组件名         | 简要描述                        |
+|-----------------------|-----------------------------------|---------------------------------|
+| `QLineEdit`           | [LineEdit](#lineedit)             | 单行文本编辑框组件               |
+| `QLineEdit`           | [SearchLineEdit](#searchlineedit) | 带搜索按钮的单行文本编辑框组件   |
+| `QLineEdit`           | [PasswordLineEdit](#passwordlineedit) | 密码输入框组件             |
+| `QTextEdit`           | [TextEdit](#textedit)             | 富文本多行编辑框组件             |
+| `QPlainTextEdit`      | [PlainTextEdit](#plaintextedit)   | 普通文本多行编辑框组件           |
+| `QSpinBox`            | [SpinBox](#spinbox)               | 整数选择组件                      |
+| `QSpinBox`            | [CompactSpinBox](#compactspinbox) | 紧凑版整数选择组件                |
+| `QDoubleSpinBox`      | [DoubleSpinBox](#doublespinbox)   | 小数选择组件                      |
+| `QDoubleSpinBox`      | [CompactDoubleSpinBox](#compactdoublespinbox) | 紧凑版小数选择组件        |
+| `QTimeEdit`           | [TimeEdit](#timeedit)             | 时间选择组件                      |
+| `QTimeEdit`           | [CompactTimeEdit](#compacttimeedit) | 紧凑版时间选择组件              |
+| `QDateEdit`           | [DateEdit](#dateedit)             | 日期选择组件                      |
+| `QDateEdit`           | [CompactDateEdit](#compactdateedit) | 紧凑版日期选择组件              |
+| `QDateTimeEdit`       | [DateTimeEdit](#datetimeedit)     | 日期时间选择组件                  |
+| `QDateTimeEdit`       | [CompactDateTimeEdit](#compactdatetimeedit) | 紧凑版日期时间选择组件   |
 
 ### 组件描述
 
 ---
 
-#### **PushButton**
+### **PushButton**
 
 **PushButton** 是一个标准按钮组件，通常用于触发操作或提交表单。它是 `QPushButton` 的替代组件，并提供类似的接口。
 
@@ -100,7 +147,7 @@ button_with_icon = PushButton(FluentIcon.FOLDER, 'Standard push button with icon
 
 ------
 
-#### **PrimaryPushButton**
+### **PrimaryPushButton**
 
 **PrimaryPushButton** 是一个主题色按钮组件，通常用于强调某种操作。它是 `QPushButton` 的增强版本。
 
@@ -124,7 +171,7 @@ primary_button_with_icon = PrimaryPushButton(FluentIcon.UPDATE, 'Accent style bu
 
 ------
 
-#### **TransparentPushButton**
+### **TransparentPushButton**
 
 **TransparentPushButton** 是一个透明按钮组件，通常用于不希望按钮背景显眼的场合，但仍需要用户点击。
 
@@ -148,7 +195,7 @@ transparent_button_with_icon = TransparentPushButton(FluentIcon.BOOK_SHELF, 'Tra
 
 ------
 
-#### **ToolButton**
+### **ToolButton**
 
 **ToolButton** 只用于显示图标，通常用于工具栏或其他只需要图标表示的场景。它是 `QToolButton` 的替代组件，并提供类似的接口。
 
@@ -172,7 +219,7 @@ tool_button_with_custom_icon = ToolButton(QIcon("/path/to/icon.png"))
 
 ------
 
-#### **PrimaryToolButton**
+### **PrimaryToolButton**
 
 **PrimaryToolButton** 只用于显示图标，是 `ToolButton` 的增强版本，适用于需要强调操作的工具栏按钮。
 
@@ -196,7 +243,7 @@ primary_tool_button_with_custom_icon = PrimaryToolButton(QIcon("/path/to/icon.pn
 
 ------
 
-#### **TransparentToolButton**
+### **TransparentToolButton**
 
 **TransparentToolButton** 是一个透明的工具按钮组件，通常用于不希望按钮背景显眼的工具栏场合。
 
@@ -220,7 +267,7 @@ transparent_tool_button_with_custom_icon = TransparentToolButton(QIcon("/path/to
 
 ------
 
-#### **TogglePushButton**
+### **TogglePushButton**
 
 **TogglePushButton** 是一个切换按钮组件，通常用于在启用和禁用状态之间进行切换。它是 `QPushButton` 的替代组件。
 
@@ -244,7 +291,7 @@ toggle_button_with_icon = TogglePushButton(FluentIcon.SEND, 'Toggle push button'
 
 ------
 
-#### **ToggleToolButton**
+### **ToggleToolButton**
 
 **ToggleToolButton** 是一个工具切换按钮组件，通常用于在工具栏中实现启用和禁用状态之间的切换。它是 `QToolButton` 的替代组件。
 
@@ -268,7 +315,7 @@ toggle_tool_button_with_custom_icon = ToggleToolButton(QIcon("/path/to/icon.png"
 
 ------
 
-#### **TransparentTogglePushButton**
+### **TransparentTogglePushButton**
 
 **TransparentTogglePushButton** 是一个透明的切换按钮组件，通常用于在启用和禁用状态之间进行切换，但不希望按钮背景显眼的场合。
 
@@ -292,7 +339,7 @@ transparent_toggle_button_with_icon = TransparentTogglePushButton(FluentIcon.BOO
 
 ------
 
-#### **TransparentToggleToolButton**
+### **TransparentToggleToolButton**
 
 **TransparentToggleToolButton** 是一个透明的工具切换按钮组件，通常用于在工具栏中实现启用和禁用状态之间的切换，同时不希望按钮背景显眼的场合。
 
@@ -316,7 +363,7 @@ transparent_toggle_tool_button_with_custom_icon = TransparentToggleToolButton(QI
 
 ------
 
-#### **PillPushButton**
+### **PillPushButton**
 
 **PillPushButton** 是一个圆形标签或过滤器按钮组件，通常用于显示文本和图标，类似于 `TogglePushButton`。
 
@@ -340,7 +387,7 @@ pill_button_with_icon = PillPushButton(FluentIcon.CALENDAR, 'Pill push button')
 
 ------
 
-#### **PillToolButton**
+### **PillToolButton**
 
 **PillToolButton** 是一个圆形标签或过滤器工具按钮组件，通常只用于显示图标，类似于 `ToggleToolButton`。
 
@@ -364,7 +411,7 @@ pill_tool_button_with_custom_icon = PillToolButton(QIcon("/path/to/icon.png"))
 
 ------
 
-#### **DropDownPushButton**
+### **DropDownPushButton**
 
 **DropDownPushButton** 是一个下拉菜单按钮组件，点击时可弹出下拉菜单。下拉菜单必须是 `RoundMenu` 及其子类。
 
@@ -393,7 +440,7 @@ dropdown_button.setMenu(menu)
 
 ------
 
-#### **DropDownToolButton**
+### **DropDownToolButton**
 
 **DropDownToolButton** 是一个下拉菜单工具按钮组件，点击时可弹出下拉菜单。下拉菜单必须是 `RoundMenu` 及其子类。
 
@@ -421,7 +468,7 @@ dropdown_tool_button.setMenu(menu)
 
 ------
 
-#### **PrimaryDropDownPushButton**
+### **PrimaryDropDownPushButton**
 
 **PrimaryDropDownPushButton** 是一个主题色下拉菜单按钮组件，点击时可弹出下拉菜单。下拉菜单必须是 `RoundMenu` 及其子类。
 
@@ -450,7 +497,7 @@ primary_dropdown_button.setMenu(menu)
 
 ------
 
-#### **PrimaryDropDownToolButton**
+### **PrimaryDropDownToolButton**
 
 **PrimaryDropDownToolButton** 是一个主题色下拉菜单工具按钮组件，点击时可弹出下拉菜单。下拉菜单必须是 `RoundMenu` 及其子类。
 
@@ -478,7 +525,7 @@ primary_dropdown_tool_button.setMenu(menu)
 
 ------
 
-#### **TransparentDropDownPushButton**
+### **TransparentDropDownPushButton**
 
 **TransparentDropDownPushButton** 是一个透明下拉菜单按钮组件，点击时可弹出下拉菜单。下拉菜单必须是 `RoundMenu` 及其子类。
 
@@ -507,7 +554,7 @@ transparent_dropdown_button.setMenu(menu)
 
 ------
 
-#### **TransparentDropDownToolButton**
+### **TransparentDropDownToolButton**
 
 **TransparentDropDownToolButton** 是一个透明下拉菜单工具按钮组件，点击时可弹出下拉菜单。下拉菜单必须是 `RoundMenu` 及其子类。
 
@@ -535,7 +582,7 @@ transparent_dropdown_tool_button.setMenu(menu)
 
 ------
 
-#### **SplitPushButton**
+### **SplitPushButton**
 
 **SplitPushButton** 是一个拆分按钮组件，由两个按钮组成，点击左侧按钮会触发 `clicked` 信号，点击右侧按钮可弹出下拉菜单。下拉菜单必须是 `RoundMenu` 及其子类。
 
@@ -565,7 +612,7 @@ split_button.setFlyout(menu)
 
 ------
 
-#### **SplitToolButton**
+### **SplitToolButton**
 
 **SplitToolButton** 是一个拆分工具按钮组件，由两个按钮组成，点击左侧按钮会触发 `clicked` 信号，点击右侧按钮可弹出下拉菜单。下拉菜单必须是 `RoundMenu` 及其子类。
 
@@ -594,7 +641,7 @@ split_tool_button.setFlyout(menu)
 
 ------
 
-#### **PrimarySplitPushButton**
+### **PrimarySplitPushButton**
 
 **PrimarySplitPushButton** 是一个主题色拆分按钮组件，由两个按钮组成，点击左侧按钮会触发 `clicked` 信号，点击右侧按钮可弹出下拉菜单。下拉菜单必须是 `RoundMenu` 及其子类。
 
@@ -624,7 +671,7 @@ primary_split_button.setFlyout(menu)
 
 ------
 
-#### **PrimarySplitToolButton**
+### **PrimarySplitToolButton**
 
 **PrimarySplitToolButton** 是一个主题色拆分工具按钮组件，由两个按钮组成，点击左侧按钮会触发 `clicked` 信号，点击右侧按钮可弹出下拉菜单。下拉菜单必须是 `RoundMenu` 及其子类。
 
@@ -653,7 +700,7 @@ primary_split_tool_button.setFlyout(menu)
 
 ------
 
-#### **CheckBox**
+### **CheckBox**
 
 **CheckBox** 是一个多选复选框组件，通常用于在一组备选项中进行多选。它是 `QCheckBox` 的替代组件，并提供类似的接口。
 
@@ -685,7 +732,7 @@ checkBox.setCheckState(Qt.PartiallyChecked)
 
 ------
 
-#### **ComboBox**
+### **ComboBox**
 
 **ComboBox** 是一个用于展示和选择内容的下拉框组件，通常用于选项过多时使用。它继承自 `PushButton`，重新实现了 `QComboBox` 的大部分接口，但无法在 Designer 中添加选项。
 
@@ -722,7 +769,7 @@ comboBox.setCurrentIndex(-1)
 
 ------
 
-#### **EditableComboBox**
+### **EditableComboBox**
 
 **EditableComboBox** 是一个可编辑的下拉框组件，允许用户编辑当前选项，并按下回车时添加新选项。它继承自 `LineEdit`，同样无法在 Designer 中添加选项。
 
@@ -756,7 +803,7 @@ comboBox.setCompleter(completer)
 
 ------
 
-#### **RadioButton**
+### **RadioButton**
 
 **RadioButton** 是一个用于在一组备选项中进行单选的按钮组件，通常与 `QButtonGroup` 组合使用。它是 `QRadioButton` 的替代组件，并提供类似的接口。
 
@@ -798,7 +845,7 @@ layout.addWidget(button3, 0, Qt.AlignCenter)
 
 ------·
 
-#### **Slider**
+### **Slider**
 
 **Slider** 是一个滑动条组件，通常用于在一个固定区间内选择值。它是 `QSlider` 的替代组件，并提供类似的接口。
 
@@ -836,7 +883,7 @@ slider_vertical.setValue(40)
 
 ------
 
-#### **SwitchButton**
+### **SwitchButton**
 
 **SwitchButton** 是一个开关按钮组件，表示两种相互对立的状态间的切换，通常用于触发「开/关」操作。它是 `QCheckBox` 的替代组件，主要用于切换操作，并提供类似的接口。
 
@@ -869,7 +916,7 @@ button.setOnText("开启")
 
 ------
 
-#### **IconWidget**
+### **IconWidget**
 
 **IconWidget** 是一个用于显示图标的组件，支持传入 `FluentIconBase`、`QIcon` 和 `str` 类型的图标。它没有直接对应的 PySide6 组件，是一个独特的图标展示组件。
 
@@ -902,7 +949,7 @@ w.setIcon("/path/to/icon")
 
 ------
 
-#### **DatePicker**
+### **DatePicker**
 
 **DatePicker** 是一个用于选择日期的组件，当选择的日期发生改变时，会发送 `dateChanged` 信号。它是 `QDateEdit` 的替代组件，提供更丰富的格式自定义功能。
 
@@ -945,7 +992,7 @@ datePicker.setColumnFormatter(0, MonthFormatter())
 
 ------
 
-#### **TimePicker**
+### **TimePicker**
 
 **TimePicker** 是一个用于选择24小时制时间的组件，当选择的时间发生改变时，会发送 `timeChanged` 信号。它是 `QTimeEdit` 的替代组件，并提供自定义格式的功能。
 
@@ -994,7 +1041,7 @@ timePicker.setColumnVisible(2, True)
 
 ------
 
-#### **CalendarPicker**
+### **CalendarPicker**
 
 **CalendarPicker** 是一个日历日期选择组件，提供了更直观的日历界面供用户选择日期。它是 `QDateEdit` 与 `QCalendarWidget` 结合的替代组件，并提供日期格式设置功能。
 
@@ -1027,7 +1074,7 @@ calendarPicker.setDateFormat('yyyy-M-d')
 
 ------
 
-#### **Dialog**
+### **Dialog**
 
 **Dialog** 是一个模态无边框对话框组件，通常用于消息提示、确认消息和提交内容。与传统的 `QDialog` 相比，`Dialog` 会中断用户操作，直到用户确认知晓后才可关闭。
 
@@ -1064,7 +1111,7 @@ w.buttonLayout.insertStretch(1)
 
 ------
 
-#### **MessageBox**
+### **MessageBox**
 
 **MessageBox** 是一个模态遮罩对话框，功能类似于 `QMessageBox`。使用时，最好将对话框的父级设置为主窗口，以确保遮罩的尺寸与主窗口保持一致。
 
@@ -1089,7 +1136,7 @@ else:
 
 ------
 
-#### **MessageBoxBase**
+### **MessageBoxBase**
 
 **MessageBoxBase** 是一个基于 `MessageBox` 的自定义对话框组件。通过继承 `MessageBoxBase` 并向 `viewLayout` 垂直布局中添加自定义组件，可以创建符合特定需求的对话框。这种灵活性使其适用于复杂场景，如输入表单或包含多个控件的对话框。
 
@@ -1097,10 +1144,7 @@ else:
 
 - **替代组件**: 无直接替代。
 
-- 主要接口
-
-  :
-
+- 主要接口:
   - `exec()`：用于显示对话框并等待用户响应。
   - `viewLayout.addWidget()`：用于向对话框中添加自定义组件。
 
@@ -1142,7 +1186,7 @@ def showMessage(window):
 
 ------
 
-#### **ColorDialog**
+### **ColorDialog**
 
 **ColorDialog** 是一个用于选择颜色的对话框组件。当用户选择的颜色发生变化时，会发送 `colorChanged(color: QColor)` 信号。它是 `QColorDialog` 的替代组件，并提供类似的接口。
 
@@ -1164,7 +1208,7 @@ w.exec()
 
 ------
 
-#### **Flyout**
+### **Flyout**
 
 **Flyout** 是一个可关闭的弹出窗口组件，可以收集用户的输入、显示项目的更多详细信息或要求用户确认操作。与对话框不同的是，`Flyout` 可以通过点击空白位置来轻松关闭。
 
@@ -1231,7 +1275,7 @@ view.closed.connect(w.close)
 
 ------
 
-#### **FlyoutViewBase**
+### **FlyoutViewBase**
 
 **FlyoutViewBase** 是 `Flyout` 的基础类，用于自定义弹出窗口的内容。通过继承 `FlyoutViewBase` 并向其中添加自定义组件，可以创建符合特定需求的弹出窗口。
 
@@ -1278,7 +1322,7 @@ class Demo(QWidget):
 
 ------
 
-#### **TeachingTip**
+### **TeachingTip**
 
 **TeachingTip** 是一个用于显示教学提示、信息或确认操作的气泡弹窗组件。与 `Flyout` 类似，`TeachingTip` 可以包含图标、标题、内容以及自定义组件，并且支持自动消失功能。
 
@@ -1356,7 +1400,7 @@ view.closed.connect(w.close)
 
 ------
 
-#### **CustomTeachingTip**
+### **CustomTeachingTip**
 
 **CustomTeachingTip** 是 `TeachingTip` 的一个扩展应用，允许将内部的 `bubble.view` 替换为 `FlyoutViewBase` 子类的实例，以实现自定义窗口内容。它使得 `TeachingTip` 更加灵活，适用于复杂的提示或操作界面。
 
@@ -1412,7 +1456,7 @@ class Demo(QWidget):
 
 ------
 
-#### **FlowLayout**
+### **FlowLayout**
 
 **FlowLayout** 是一个自适应视口宽度的流式布局组件，当内部组件超出视口宽度时自动换行。它适合用于布局大小不固定且需要动态调整的场景。
 
@@ -1460,7 +1504,7 @@ for w in widgets:
 
 ------
 
-#### **CardWidget**
+### **CardWidget**
 
 **CardWidget** 是一个灵活的卡片组件，常用于以结构化和美观的方式展示各种类型的信息和内容。它是一个容器组件，可用于放置任意组件，并且支持点击事件。
 
@@ -1524,13 +1568,13 @@ card.setBorderRadius(8)
 
 ------
 
-#### **SimpleCardWidget**
+### **SimpleCardWidget**
 
 **SimpleCardWidget** 是 `CardWidget` 的子类，与 `CardWidget` 唯一的区别是 `SimpleCardWidget` 的背景不会随着鼠标进入或退出而变化。它适合用于不需要视觉反馈的场景。
 
 ------
 
-#### **ElevatedCardWidget**
+### **ElevatedCardWidget**
 
 **ElevatedCardWidget** 是带阴影效果的卡片组件，当鼠标移入时，会显示阴影和上移动画。它常用于需要强调的内容展示场景。
 
@@ -1566,7 +1610,7 @@ class EmojiCard(ElevatedCardWidget):
 
 ------
 
-#### **HeaderCardWidget**
+### **HeaderCardWidget**
 
 **HeaderCardWidget** 是带标题的卡片组件，通常用于替代 `QGroupBox`。它内置了水平布局，用户只需将组件添加到 `viewLayout` 中即可完成布局。
 
@@ -1611,7 +1655,7 @@ class SystemRequirementCard(HeaderCardWidget):
 
 ------
 
-#### **GroupHeaderCardWidget**
+### **GroupHeaderCardWidget**
 
 **GroupHeaderCardWidget** 是一个带有分组功能的卡片组件，允许用户通过 `addGroup()` 方法将组件添加到新分组中。分组会被存放在垂直布局 `vBoxLayout` 中，适用于展示多层次的结构化信息。
 
@@ -1672,7 +1716,7 @@ class SettinsCard(GroupHeaderCardWidget):
 
 ------
 
-#### **RoundMenu**
+### **RoundMenu**
 
 **RoundMenu** 是一个用于提供一系列动作供用户选择的菜单组件，使用方式与 `QMenu` 类似。支持自定义菜单项、子菜单，并可以添加自定义组件。
 
@@ -1756,7 +1800,7 @@ class Demo(QWidget):
 
 ------
 
-#### **CheckableMenu**
+### **CheckableMenu**
 
 **CheckableMenu** 是一个支持勾选功能的菜单组件，通常与 `QActionGroup` 一起使用，以提供多选或单选功能。
 
@@ -1809,7 +1853,7 @@ class Demo(QWidget):
 
 ------
 
-#### **SystemTrayMenu**
+### **SystemTrayMenu**
 
 **SystemTrayMenu** 是一个用于系统托盘的菜单组件，通常与 `QSystemTrayIcon` 一起使用，为用户提供快捷操作入口。
 
@@ -1871,7 +1915,7 @@ class Demo(QWidget):
 
 ------
 
-#### **CommandBar**
+### **CommandBar**
 
 **CommandBar** 是一个水平排列的动作栏，当动作过多以至于视口容纳不下时，CommandBar 会自动隐藏超出视口的动作到下拉菜单中。它是 QToolBar 的替代组件，提供类似的接口，并且支持更灵活的自定义。
 
@@ -1932,7 +1976,7 @@ commandBar.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
 
 ------
 
-#### **CommandBarView**
+### **CommandBarView**
 
 **CommandBarView** 是 CommandBar 的变体，通常与 Flyout 一起使用。它继承了 CommandBar 的大部分功能和接口，同时更适合在弹出窗口或侧边栏中显示。CommandBarView 提供了与 CommandBar 类似的接口，使得开发者可以轻松在弹出窗口中集成操作栏。
 
@@ -1980,6 +2024,816 @@ CommandBarView 是一个灵活的操作栏组件，非常适合在弹出窗口�
 
 ------
 
+### **InfoBadge**
 
+**InfoBadge** 是一个小型的通知标记组件，通常用于在应用的导航菜单或工具栏上显示未读消息、状态更新或其他重要通知。InfoBadge 提供了多种样式，并且支持自定义位置的设置。
 
+**主要功能**：
+
+- **替代组件**: 无直接替代组件。
+- **主要接口**: `InfoBadge.info()`、`InfoBadge.success()`、`InfoBadge.attension()`、`InfoBadge.warning()`、`InfoBadge.error()`、`InfoBadge.custom()` 方法用于创建不同类型的徽章。
+- **自定义样式**: 可以通过 `InfoBadge.custom()` 方法设置自定义颜色和文本。
+- **应用场景**: 适用于需要显示未读消息数、通知或状态更新的场合。
+
+**详细描述**：
+
+- **创建 InfoBadge**:
+  - `InfoBadge.info(1)` 创建一个信息类的徽章。
+  - `InfoBadge.success(10)` 创建一个成功类的徽章。
+  - `InfoBadge.attension(100)` 创建一个需要关注的徽章。
+  - `InfoBadge.warning(1000)` 创建一个警告类的徽章。
+  - `InfoBadge.error(10000)` 创建一个错误类的徽章。
+  - `InfoBadge.custom('1w+', '#005fb8', '#60cdff')` 创建一个自定义颜色和文本的徽章。
+
+- **附着 InfoBadge 到组件**:
+  ```python
+  button = ToolButton(FIF.BASKETBALL, parent)
+  vBoxLayout.addWidget(button, 0, Qt.AlignHCenter)
+  InfoBadge.success(1, parent=parent, target=button, position=InfoBadgePosition.TOP_RIGHT)
+  ```
+**自定义徽章位置**: 如果内置的位置不满足需求，可以继承 `InfoBadgeManager` 并重写 `position()` 方法来自定义徽章的位置。
+
+```python
+@InfoBadgeManager.register('Custom')
+class CustomInfoBadgeManager(InfoBadgeManager):
+    """ Custom info badge manager """
+    def position(self):
+        pos = self.target.geometry().center()
+        x = pos.x() - self.badge.width() // 2
+        y = self.target.y() - self.badge.height() // 2
+        return QPoint(x, y)
+
+# 使用自定义的徽章位置管理器
+InfoBadge.success(1, parent=parent, target=button, position="Custom")
+```
+
+**徽章位置选项**: 内置了 7 种徽章位置，使用 `position` 参数设置：
+
+```python
+class InfoBadgePosition(Enum):
+    """ Info badge position """
+    TOP_RIGHT = 0
+    BOTTOM_RIGHT = 1
+    RIGHT = 2
+    TOP_LEFT = 3
+    BOTTOM_LEFT = 4
+    LEFT = 5
+    NAVIGATION_ITEM = 6
+```
+
+### **DotInfoBadge**
+
+**DotInfoBadge** 是一种仅显示小圆点的通知标记组件，不显示任何数字或图标，主要用于提醒用户有新的信息或状态变化，但不需要显示具体的数量或类型。
+
+**主要功能**：
+
+- **替代组件**: 无直接替代组件。
+- **主要接口**: `DotInfoBadge.info()`、`DotInfoBadge.success()`、`DotInfoBadge.attension()`、`DotInfoBadge.warning()`、`DotInfoBadge.error()`、`DotInfoBadge.custom()` 方法用于创建不同类型的小圆点徽章。
+- **自定义样式**: 可以通过 `DotInfoBadge.custom()` 方法设置自定义颜色。
+- **应用场景**: 适用于需要提醒用户但不需要展示具体数量的场合。
+
+**示例代码**：
+
+```python
+DotInfoBadge.info()
+DotInfoBadge.success()
+DotInfoBadge.attension()
+DotInfoBadge.warning()
+DotInfoBadge.error()
+DotInfoBadge.custom('#005fb8', '#60cdff')
+```
+
+------
+
+### **IconInfoBadge**
+
+**IconInfoBadge** 是一种在其内部显示图标而非数字的通知标记组件，可以用来表示特定类型的通知或状态。
+
+**主要功能**：
+
+- **替代组件**: 无直接替代组件。
+- **主要接口**: `IconInfoBadge.info()`、`IconInfoBadge.success()`、`IconInfoBadge.attension()`、`IconInfoBadge.warning()`、`IconInfoBadge.error()` 方法用于创建不同类型的图标徽章。
+- **自定义样式**: 可以通过传递 `FluentIconBase` 类型的图标来设置徽章的图标。
+- **应用场景**: 适用于需要通过图标表示通知类型的场合，如成功、警告、错误等状态。
+
+**示例代码**：
+
+```python
+IconInfoBadge.info(FluentIcon.ACCEPT_MEDIUM)
+IconInfoBadge.success(FluentIcon.ACCEPT_MEDIUM)
+IconInfoBadge.attension(FluentIcon.ACCEPT_MEDIUM)
+IconInfoBadge.warning(FluentIcon.CANCEL_MEDIUM)
+IconInfoBadge.error(FluentIcon.CANCEL_MEDIUM)
+```
+
+------
+
+### **InfoBar**
+
+**InfoBar** 是一个消息条组件，用于在应用程序中显示重要信息，例如错误消息、警告或提示信息，告知用户需要采取的行动。
+
+**主要功能**：
+
+- **替代组件**: 无直接替代组件。
+- **主要接口**: `InfoBar.success()`、`InfoBar.warning()`、`InfoBar.error()`、`InfoBar.info()` 方法用于创建不同类型的消息条。`InfoBar.new()` 方法用于创建自定义消息条。
+- **自定义样式**: 通过 `setCustomBackgroundColor()` 可以设置自定义背景颜色，通过 `addWidget()` 可以添加按钮等自定义组件。
+- **应用场景**: 适用于需要在应用程序中提示用户重要信息的场合，如错误提示、操作成功提示等。
+
+**默认位置**：
+
+`InfoBar` 默认提供了几个位置选项，如 `TOP`, `BOTTOM`, `TOP_LEFT`, `TOP_RIGHT`, `BOTTOM_LEFT`, `BOTTOM_RIGHT`。这些位置通过 `InfoBarPosition` 枚举类进行管理，用户可以轻松选择消息条在屏幕上的弹出位置。
+
+**示例代码**：
+
+```python
+# 成功消息
+InfoBar.success(
+    title='Lesson 4',
+    content="表达敬意吧，表达出敬意，然后迈向回旋的另一个全新阶段！",
+    orient=Qt.Horizontal,
+    isClosable=True,
+    position=InfoBarPosition.TOP,
+    duration=2000,
+    parent=window
+)
+
+# 警告消息
+InfoBar.warning(
+    title='Lesson 3',
+    content="相信回旋吧，只相信便是！",
+    orient=Qt.Horizontal,
+    isClosable=True,
+    position=InfoBarPosition.BOTTOM,
+    duration=-1,    # 永不消失
+    parent=window
+)
+
+# 失败消息
+InfoBar.error(
+    title='Lesson 5',
+    content="最短的捷径就是绕远路，绕远路才是我的最短捷径。",
+    orient=Qt.Vertical,  # 内容太长时可使用垂直布局
+    isClosable=True,
+    position=InfoBarPosition.BOTTOM_RIGHT,
+    duration=-1,
+    parent=window
+)
+
+# 消息
+InfoBar.info(
+    title='Lesson 5',
+    content="最短的捷径就是绕远路，绕远路才是我的最短捷径。",
+    orient=Qt.Horizontal,
+    isClosable=True,
+    position=InfoBarPosition.BOTTOM_LEFT,
+    duration=-1,
+    parent=window
+)
+
+# 自定义消息条
+w = InfoBar.new(
+    icon=FluentIcon.GITHUB,
+    title='波纹疾走',
+    content="人类的赞歌就是勇气的赞歌，人类的伟大就是勇气的伟大！",
+    orient=Qt.Horizontal,
+    isClosable=True,
+    position=InfoBarPosition.BOTTOM,
+    duration=2000,
+    parent=window
+)
+w.setCustomBackgroundColor('white', '#202020')
+
+# 添加自定义组件
+w.addWidget(PushButton('Action'))
+w.show()
+```
+
+**消息条位置管理**：
+
+`InfoBarPosition` 枚举类提供了消息条的弹出位置选项。你还可以继承 `InfoBarManager` 并重写 `position()` 方法来自定义消息条位置。
+
+```python
+@InfoBarManager.register('Custom')
+class CustomInfoBarManager(InfoBarManager):
+    """ 自定义消息条管理器 """
+
+    def _pos(self, infoBar: InfoBar, parentSize=None):
+        p = infoBar.parent()
+        parentSize = parentSize or p.size()
+
+        # 第一个消息条的位置
+        x = (parentSize.width() - infoBar.width()) // 2
+        y = (parentSize.height() - infoBar.height()) // 2
+
+        # 计算当前 infoBar 的位置
+        index = self.infoBars[p].index(infoBar)
+        for bar in self.infoBars[p][0:index]:
+            y += (bar.height() + self.spacing)
+
+        return QPoint(x, y)
+
+    def _slideStartPos(self, infoBar: InfoBar):
+        pos = self._pos(infoBar)
+        return QPoint(pos.x(), pos.y() - 16)
+
+# 使用自定义管理器
+InfoBar.success(
+    title='Lesson 4',
+    content="表达敬意吧，表达出敬意，然后迈向回旋的另一个全新阶段！",
+    orient=Qt.Horizontal,
+    isClosable=True,
+    position="Custom",  # 使用自定义管理器
+    duration=2000,
+    parent=window
+)
+```
+
+------
+
+### **ProgressBar**
+
+**ProgressBar** 用于显示任务进度，用法和 `QProgressBar` 几乎完全相同，但取消了文本显示功能。因此如果需要显示进度百分比，需要自己在外部添加Label组件。
+
+**主要功能**：
+
+- **替代组件**: `QProgressBar`
+- **主要接口**: `setRange()` 用于设置进度条的范围，`setValue()` 用于设置当前进度值。
+- **自定义样式**: 可以通过 `setCustomBarColor()` 设置自定义进度条的颜色。
+- **应用场景**: 适用于显示任务进度的场合，如文件下载、数据处理等。
+
+**状态控制**：
+
+`ProgressBar` 可以设置不同的状态，如暂停状态和错误状态。不同状态下进度条的颜色会发生变化。
+
+**示例代码**：
+
+```python
+progressBar = ProgressBar()
+
+# 设置取值范围
+progressBar.setRange(0, 100)
+
+# 设置当前值
+progressBar.setValue(40)
+
+# 设置暂停状态
+progressBar.pause()
+
+# 设置错误状态
+progressBar.error()
+
+# 恢复运行状态
+progressBar.resume()
+
+# 自定义进度条的颜色
+progressBar.setCustomBarColor(QColor(255, 0, 0), QColor(0, 255, 110))
+```
+
+------
+
+### **IndeterminateProgressBar**
+
+**IndeterminateProgressBar** 表示一个正在进行但其完成时间未知的长时间运行任务。在没有明确的完成时间或进度信息的情况下，这种进度条非常有用，例如在加载或处理大量数据时。
+
+**主要功能**：
+
+- **替代组件**: 无
+- **主要接口**: `start()` 用于启动进度条，`pause()` 和 `error()` 用于切换进度条的状态。
+- **自定义样式**: 通过 `setCustomBarColor()` 可以设置自定义进度条的颜色。
+- **应用场景**: 适用于未确定任务进度的场合，如数据加载、网络请求等。
+
+**示例代码**：
+
+```python
+bar = IndeterminateProgressBar(start=True)
+
+# 设置暂停状态
+bar.pause()
+
+# 设置错误状态
+bar.error()
+
+# 恢复运行状态
+bar.resume()
+
+# 自定义进度条的颜色
+bar.setCustomBarColor(QColor(255, 0, 0), QColor(0, 255, 110))
+```
+
+------
+
+### **ProgressRing**
+
+**ProgressRing** 是一个环形进度条，可以用来表示处理进度或者用作仪表盘，使用方式和 `ProgressBar` 相似。
+
+**主要功能**：
+
+- **替代组件**: 无
+- **主要接口**: `setRange()` 用于设置进度环的范围，`setValue()` 用于设置当前进度值，`setTextVisible()` 用于显示或隐藏进度环内的文本。
+- **自定义样式**: 可以通过 `setStrokeWidth()` 设置进度环的厚度，并通过 `setFormat()` 设置进度环内文本的格式。
+- **应用场景**: 适用于显示环形进度或作为仪表盘的场合，如处理进度显示、温度显示等。
+
+**示例代码**：
+
+```python
+ring = ProgressRing()
+
+# 设置进度环取值范围和当前值
+ring.setRange(0, 100)
+ring.setValue(30)
+
+# 显示进度环内文本
+ring.setTextVisible(True)
+
+# 调整进度环大小
+ring.setFixedSize(80, 80)
+
+# 调整厚度
+ring.setStrokeWidth(4)
+
+# 调整进度环的文本格式，比如显示温度
+ring.setFormat("%v℃")
+```
+
+------
+
+### **IndeterminateProgressRing**
+
+**IndeterminateProgressRing** 用于表示应用程序正在进行某项操作，但该操作的完成时间未知。
+
+**主要功能**：
+
+- **替代组件**: 无
+- **主要接口**: 通过 `start()` 启动环形进度条，通过 `pause()` 和 `error()` 控制状态。
+- **自定义样式**: 通过 `setStrokeWidth()` 设置进度环的厚度。
+- **应用场景**: 适用于未知进度的长时间操作，如数据加载、网络请求等。
+
+**示例代码**：
+
+```python
+spinner = IndeterminateProgressRing()
+
+# 调整大小
+spinner.setFixedSize(50, 50)
+
+# 调整厚度
+spinner.setStrokeWidth(4)
+```
+
+------
+
+## 详细描述
+
+### **ToolTipFilter**
+
+**ToolTipFilter** 用来将 `QToolTip` 替换成组件库的 `ToolTip`，只要给组件安装上此过滤器即可完成替代。这是最常用的提示组件之一。
+
+**主要功能**：
+
+- **替代组件**: `QToolTip`
+- **主要接口**: `installEventFilter()` 用于将过滤器安装到指定组件上，实现工具提示的替换。
+- **自定义样式**: 通过 `setToolTip()` 设置提示文本，`setToolTipDuration()` 设置提示持续时间。
+- **应用场景**: 适用于所有需要提示信息的组件上，如按钮、标签等。
+
+**示例代码**：
+
+```python
+button = QPushButton('キラキラ')
+
+button.setToolTip('aiko - キラキラ ✨')
+button.setToolTipDuration(1000)
+
+# 给按钮安装工具提示过滤器
+button.installEventFilter(ToolTipFilter(button, showDelay=300, position=ToolTipPosition.TOP))
+```
+
+------
+
+## 详细描述
+
+### **FluentLabelBase**
+
+**FluentLabelBase** 是一个用于显示文本的基础组件，可以根据主题切换文本颜色。它是一个抽象类，通常使用它的子类。
+
+**主要功能**：
+
+- **替代组件**: `QLabel`
+- **主要接口**: `setText()` 用于设置标签的文本内容，`setTextColor()` 用于设置文本的颜色。
+- **自定义样式**: 可以自定义浅色和深色主题下的文本颜色。
+- **应用场景**: 适用于显示静态文本的所有场合，如表单标签、说明文字等。
+
+**示例代码**：
+
+```python
+label = BodyLabel("标签")
+label.setTextColor(QColor(0, 255, 0), QColor(255, 0, 0))  # 浅色主题
+```
+### **CaptionLabel**
+
+**CaptionLabel** 是 `FluentLabelBase` 的一个子类，用于显示小型文本标签。
+
+### **BodyLabel**
+
+**BodyLabel** 是 `FluentLabelBase` 的一个子类，用于显示主体文本标签。
+
+### **StrongBodyLabel**
+
+**StrongBodyLabel** 是 `FluentLabelBase` 的一个子类，用于显示强调的主体文本标签。
+
+### **SubtitleLabel**
+
+**SubtitleLabel** 是 `FluentLabelBase` 的一个子类，用于显示副标题标签。
+
+### **TitleLabel**
+
+**TitleLabel** 是 `FluentLabelBase` 的一个子类，用于显示标题标签。
+
+### **LargeTitleLabel**
+
+**LargeTitleLabel** 是 `FluentLabelBase` 的一个子类，用于显示大标题标签。
+
+### **DisplayLabel**
+
+**DisplayLabel** 是 `FluentLabelBase` 的一个子类，用于显示较大的文本标签。
+
+------
+
+### **HyperlinkLabel**
+
+**HyperlinkLabel** 是一个可以点击后自动跳转到指定链接的标签组件，通常用于显示超链接。
+
+**主要功能**：
+
+- **替代组件**: `QLabel` (用于显示链接)
+- **主要接口**: `setUrl()` 用于设置链接地址，`setUnderlineVisible()` 用于控制是否显示下划线。
+- **应用场景**: 用于显示可点击的链接，如帮助文档、网页导航等。
+
+**示例代码**：
+
+```python
+label = HyperlinkLabel(QUrl('https://github.com/'), 'GitHub')
+
+# 显示下划线
+label.setUnderlineVisible(True)
+
+# 更换超链接
+label.setUrl('https://github.com/zhiyiYo/QMaterialWidgets')
+print(label.url)
+```
+
+### **ImageLabel**
+
+**ImageLabel** 是一个用于显示图片或者 GIF 的组件，在高分屏下也能清晰显示图片而不出现锯齿。
+
+**主要功能**：
+
+- **替代组件**: `QLabel` (用于显示图片)
+- **主要接口**: `scaledToHeight()` 用于按比例缩放图片高度，`setBorderRadius()` 用于设置圆角。
+- **应用场景**: 用于展示静态图片、图标或者动画 GIF，适合用于用户头像、图像展示等场景。
+
+**示例代码**：
+
+```python
+image = ImageLabel("/path/to/image.png")
+
+# 按比例缩放到指定高度
+image.scaledToHeight(300)
+
+# 设置圆角
+image.setBorderRadius(8, 8, 8, 8)
+```
+
+### **AvatarWidget**
+
+**AvatarWidget** 是一个用于显示圆形头像的组件，可以是静态图片或者 GIF。
+
+**主要功能**：
+
+- **替代组件**: `QLabel` (用于显示头像)
+- **主要接口**: `setRadius()` 用于设置头像的半径大小。
+- **应用场景**: 用于显示用户头像，常用于个人信息面板、社交媒体应用等。
+
+**示例代码**：
+
+```python
+w = AvatarWidget("/path/to/image.png")
+
+# 设置头像半径
+w.setRadius(64)
+```
+
+------
+
+### **LineEdit**
+
+**LineEdit** 是一个用于编辑单行文本的组件，使用方式与 `QLineEdit` 完全相同。
+
+**主要功能**：
+
+- **替代组件**: `QLineEdit`
+- **主要接口**: 
+  - `setPlaceholderText()` 用于设置提示文本。
+  - `setText()` 用于设置文本内容。
+  - `setClearButtonEnabled()` 用于启用清空按钮。
+  - `setCompleter()` 用于设置自动补全菜单。
+- **应用场景**: 适用于需要单行文本输入的场合，如用户登录、表单填写等。
+
+**示例代码**：
+
+```python
+lineEdit = LineEdit()
+
+# 设置提示文本
+lineEdit.setPlaceholderText("example@example.com")
+
+# 设置文本
+lineEdit.setText("shokokawaii@foxmail.com")
+print(lineEdit.text())
+
+# 启用清空按钮
+lineEdit.setClearButtonEnabled(True)
+
+# 设置补全菜单
+stands = [
+    "Star Platinum", "Hierophant Green", "Made in Heaven",
+    "King Crimson", "Silver Chariot", "Crazy Diamond"
+]
+completer = QCompleter(stands, lineEdit)
+completer.setCaseSensitivity(Qt.CaseInsensitive)
+completer.setMaxVisibleItems(10)
+
+lineEdit.setCompleter(completer)
+```
+
+------
+
+### **SearchLineEdit**
+
+**SearchLineEdit** 是 `LineEdit` 的扩展，在其右侧添加了一个搜索按钮，用户可以点击按钮或按下回车键触发搜索信号。
+
+**主要功能**：
+
+- **替代组件**: `QLineEdit`
+
+- 主要接口:
+  - `searchSignal` 信号会在搜索时触发，返回搜索内容。
+
+- **应用场景**: 适用于需要搜索功能的输入框，如搜索栏、查找框等。
+
+**示例代码**：
+
+```python
+lineEdit = SearchLineEdit()
+lineEdit.searchSignal.connect(lambda text: print("搜索：" + text))
+```
+
+### **PasswordLineEdit**
+
+**PasswordLineEdit** 是一个用于输入密码的文本框，默认情况下隐藏输入内容。
+
+**主要功能**：
+
+- **替代组件**: `QLineEdit`
+
+- 主要接口:
+  - `setPasswordVisible()` 用于显示或隐藏密码。
+
+- **应用场景**: 适用于密码输入场合，如用户登录、密码修改等。
+
+**示例代码**：
+
+```python
+lineEdit = PasswordLineEdit()
+lineEdit.setText("123456")
+
+# 显示密码
+lineEdit.setPasswordVisible(True)
+```
+
+### **TextEdit**
+
+**TextEdit** 是一个富文本多行编辑框，能够渲染 HTML 和 Markdown 格式的文本，使用方式与 `QTextEdit` 完全相同。
+
+**主要功能**：
+
+- **替代组件**: `QTextEdit`
+
+- 主要接口:
+  - `setMarkdown()` 用于设置 Markdown 格式的文本。
+  - `toPlainText()` 获取普通文本内容。
+  - `toHtml()` 获取富文本内容。
+
+- **应用场景**: 适用于需要输入或显示富文本内容的场合，如富文本编辑器、评论区等。
+
+**示例代码**：
+
+```python
+textEdit = TextEdit()
+textEdit.setMarkdown("## Steel Ball Run \n * Johnny Joestar 🦄 \n * Gyro Zeppeli 🐴 ")
+
+# 获取普通文本
+print(textEdit.toPlainText())
+
+# 获取富文本
+print(textEdit.toHtml())
+```
+
+### **PlainTextEdit**
+
+**PlainTextEdit** 是一个普通文本多行编辑框，使用方式与 `QPlainTextEdit` 完全相同。
+
+**主要功能**：
+
+- **替代组件**: `QPlainTextEdit`
+
+- 主要接口:
+  - `setPlainText()` 用于设置普通文本内容。
+  - `toPlainText()` 用于获取普通文本内容。
+
+- **应用场景**: 适用于需要输入或显示纯文本内容的场合，如日志查看器、代码编辑器等。
+
+**示例代码**：
+
+```python
+textEdit = PlainTextEdit()
+textEdit.setPlainText("两岸猿声啼不住 \n 轻舟已过万重山 ")
+
+# 获取普通文本
+print(textEdit.toPlainText())
+```
+
+------
+
+### **SpinBox**
+
+**SpinBox** 是一个用于让用户在一定范围内选择整数值的组件，使用方式与 `QSpinBox` 完全相同。
+
+**主要功能**：
+
+- **替代组件**: `QSpinBox`
+- **主要接口**: 
+  - `setRange()` 用于设置取值范围。
+  - `setValue()` 用于设置当前值。
+  - `valueChanged` 信号用于监听数值改变。
+- **应用场景**: 适用于需要用户选择或输入整数的场合，如选择数量、调整参数值等。
+
+**示例代码**：
+
+```python
+spinBox = SpinBox()
+
+# 设置取值范围
+spinBox.setRange(0, 100)
+
+# 设置当前值
+spinBox.setValue(30)
+
+# 监听数值改变信号
+spinBox.valueChanged.connect(lambda value: print("当前值：", value))
+
+# 获取当前值
+print(spinBox.value())
+```
+
+------
+
+### **DoubleSpinBox**
+
+**DoubleSpinBox** 是一个用于让用户在一定范围内选择小数值的组件，使用方式与 `QDoubleSpinBox` 完全相同。
+
+**主要功能**：
+
+- **替代组件**: `QDoubleSpinBox`
+
+- 主要接口:
+  - `setRange()` 用于设置取值范围。
+  - `setValue()` 用于设置当前值。
+  - `valueChanged` 信号用于监听数值改变。
+
+- **应用场景**: 适用于需要用户选择或输入小数值的场合，如调整精确参数值等。
+
+**示例代码**：
+
+```python
+spinBox = DoubleSpinBox()
+
+# 设置取值范围
+spinBox.setRange(-100, 100)
+
+# 设置当前值
+spinBox.setValue(30.5)
+
+# 监听数值改变信号
+spinBox.valueChanged.connect(lambda value: print("当前值：", value))
+
+# 获取当前值
+print(spinBox.value())
+```
+
+------
+
+### **TimeEdit**
+
+**TimeEdit** 是一个用于让用户在一定时间范围内选择时间的组件，使用方式与 `QTimeEdit` 完全相同。
+
+**主要功能**：
+
+- **替代组件**: `QTimeEdit`
+
+- 主要接口:
+  - `setTimeRange()` 用于设置时间取值范围。
+  - `setTime()` 用于设置当前时间。
+  - `timeChanged` 信号用于监听时间改变。
+
+- **应用场景**: 适用于需要用户选择时间的场合，如设定时间、调整时间等。
+
+**示例代码**：
+
+```python
+timeEdit = TimeEdit()
+
+# 设置取值范围
+timeEdit.setTimeRange(QTime(0, 0, 0), QTime(11, 59, 59))
+
+# 设置当前值
+timeEdit.setTime(QTime(1, 1, 1))
+
+# 监听数值改变信号
+timeEdit.timeChanged.connect(lambda time: print("当前时间：", time.toString()))
+
+# 获取当前值
+print(timeEdit.time())
+```
+
+------
+
+### **DateEdit**
+
+**DateEdit** 是一个用于让用户在一定日期范围内选择日期的组件，使用方式与 `QDateEdit` 完全相同。优先使用CalendarPicker组件来进行日期选择。
+
+**主要功能**：
+
+- **替代组件**: `QDateEdit`
+
+- 主要接口:
+  - `setDateRange()` 用于设置日期取值范围。
+  - `setDate()` 用于设置当前日期。
+  - `dateChanged` 信号用于监听日期改变。
+
+- **应用场景**: 适用于需要用户选择日期的场合，如设定日期、调整日期等。
+
+**示例代码**：
+
+```python
+dateEdit = DateEdit()
+
+# 设置取值范围
+dateEdit.setDateRange(QDate(2024, 1, 1), QDate(2024, 11, 11))
+
+# 设置当前值
+dateEdit.setDate(QDate(2024, 2, 2))
+
+# 监听数值改变信号
+dateEdit.dateChanged.connect(lambda date: print("当前日期：", date.toString()))
+
+# 获取当前值
+print(dateEdit.date())
+```
+
+------
+
+### **DateTimeEdit**
+
+**DateTimeEdit** 是一个用于让用户在一定日期和时间范围内选择日期时间的组件，使用方式与 `QDateTimeEdit` 完全相同。
+
+**主要功能**：
+
+- **替代组件**: `QDateTimeEdit`
+
+- 主要接口:
+  - `setDateTimeRange()` 用于设置日期时间取值范围。
+  - `setDateTime()` 用于设置当前日期时间。
+  - `dateTimeChanged` 信号用于监听日期时间改变。
+
+- **应用场景**: 适用于需要用户选择日期和时间的场合，如设定日程、调整时间等。
+
+**示例代码**：
+
+```python
+dt = DateTimeEdit()
+
+# 设置取值范围
+dt.setDateTimeRange(QDate(2024, 1, 1, 0, 0, 0), QDate(2024, 11, 11, 11, 59, 59))
+
+# 设置当前值
+dt.setDateTime(QDateTime(2024, 2, 2, 12, 0, 0))
+
+# 监听数值改变信号
+dt.dateTimeChanged.connect(lambda dateTime: print("当前日期时间：", dateTime.toString()))
+
+# 获取当前值
+print(dt.dateTime())
+```
+
+ 
 
